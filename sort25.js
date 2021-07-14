@@ -34,3 +34,13 @@ function sortIt(arr){
 sortIt([1,1,1,2,2,3]) // [3,2,2,1,1,1]
 sortIt([1,1,1,2,2,2,3,3,3]) // [3,3,3,2,2,2,1,1,1]
 sortIt([1,2,3,4,4,5,5,6,6]) // [3,2,1,6,6,5,5,4,4]
+
+
+// anoda soln
+function sortIt(arr){
+          var newObj = new Object();  
+
+          arr.forEach(a => newObj[a] = isNaN(newObj[a]) ? 1 : newObj[a] + 1);    
+
+          return arr.slice().sort((a, b) => newObj[a] === newObj[b] ? b - a : newObj[a] - newObj[b]);  
+}
